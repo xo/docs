@@ -7,7 +7,7 @@ titleAddition = "XO"
 description = "A tool to generate idiomatic code from your database schema and queries"
 
 ## Open Graph + Twitter Cards
-images = ["doks.png"]
+images = ["xo.png"]
 twitterSite = "xo"
 twitterCreator = "xo"
 ogLocale = "en_US"

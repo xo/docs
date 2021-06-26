@@ -30,9 +30,10 @@ document.addEventListener('click', function(event) {
 /*
 Source:
   - https://dev.to/shubhamprakash/trap-focus-using-javascript-6a3
-*/
+  */
 
 document.addEventListener('keydown',suggestionFocus);
+document.addEventListener('click',codeToggle);
 
 function suggestionFocus(e){
 
@@ -55,42 +56,59 @@ function suggestionFocus(e){
 
 }
 
+function codeToggle(e) {
+  const classes = e.target.classList;
+  if (!classes.contains("code-select")) {
+    return;
+  }
+  let typs = ["postgres", "mysql", "sqlite", "sqlserver", "oracle"]
+  typs.forEach(function(typ) {
+    if (classes.contains(typ)) {
+      document.body.classList.add(typ);
+      window.localStorage.setItem('code-toggle', typ);
+    } else {
+      document.body.classList.remove(typ);
+    }
+  })
+}
+
 
 /*
 Source:
   - https://github.com/nextapps-de/flexsearch#index-documents-field-search
   - https://raw.githack.com/nextapps-de/flexsearch/master/demo/autocomplete.html
-*/
+  */
 
 (function(){
 
   var index = new FlexSearch({
     preset: 'score',
-    cache: true,
+    tokenize: "forward",
+    cache: false,
     doc: {
-        id: 'id',
-        field: [
-          'title',
-          'description',
-          'content',
-        ],
-        store: [
-          'href',
-          'title',
-          'description',
-        ],
+      id: 'id',
+      field: [
+        'title',
+        'description',
+        'content',
+      ],
+      store: [
+        'href',
+        'title',
+        'description',
+      ],
     },
   });
 
   var docs = [
     {{ range $index, $page := (where .Site.Pages "Section" "docs") -}}
-      {
-        id: {{ $index }},
+    {
+      id: {{ $index }},
         href: "{{ .RelPermalink | relURL }}",
         title: {{ .Title | jsonify }},
         description: {{ .Params.description | jsonify }},
-        content: {{ .Content | jsonify }}
-      },
+        content: {{ .Plain | jsonify }}
+    },
     {{ end -}}
   ];
 
@@ -106,7 +124,13 @@ Source:
     var entry, childs = suggestions.childNodes;
     var i = 0, len = results.length;
 
-    suggestions.classList.remove('d-none');
+
+    console.log(results)
+    if (len > 0) {
+      suggestions.classList.remove('d-none');
+    } else {
+      suggestions.classList.add('d-none');
+    }
 
     results.forEach(function(page) {
 
@@ -115,8 +139,8 @@ Source:
       entry.innerHTML = '<a href><span></span><span></span></a>';
 
       a = entry.querySelector('a'),
-      t = entry.querySelector('span:first-child'),
-      d = entry.querySelector('span:nth-child(2)');
+        t = entry.querySelector('span:first-child'),
+        d = entry.querySelector('span:nth-child(2)');
 
       a.href = page.href;
       t.textContent = page.title;
@@ -128,19 +152,19 @@ Source:
 
     while(childs.length > len){
 
-        suggestions.removeChild(childs[i])
+      suggestions.removeChild(childs[i])
     }
 
   }
 
   function accept_suggestion(){
 
-      while(suggestions.lastChild){
+    while(suggestions.lastChild){
 
-          suggestions.removeChild(suggestions.lastChild);
-      }
+      suggestions.removeChild(suggestions.lastChild);
+    }
 
-      return false;
+    return false;
   }
 
 }());

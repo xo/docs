@@ -1,59 +1,103 @@
 {{ define "main" }}
 <section class="section container-fluid mt-n3 pb-3">
-  <div class="row justify-content-center">
-    <div class="col-lg-12 text-center">
-      <h1 class="mt-0">{{ .Title }}</h1>
-    </div>
-    <div class="col-lg-9 col-xl-8 text-center">
-      <p class="lead">{{ .Params.lead | safeHTML }}</p>
-      <a class="btn btn-primary btn-lg px-4 mb-2" href="{{ "docs/prologue/introduction/" | relURL }}" role="button">Get started</a>
-      <p class="meta">Open-source MIT Licensed. <a href="https://github.com/h-enk/doks">GitHub v{{ .Site.Data.doks.version }}</a></p>
-    </div>
-  </div>
+	<div class="row justify-content-center">
+		<div class="col-lg-12 text-center">
+			<h1 class="mt-0">{{ .Title }}</h1>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="text-center">
+			<pre class="mt-2 d-inline-block"><code class="d-inline-block">$ go install github.com/xo/xo</code></pre>
+		</div>
+	</div>
+	<div class="row justify-content-center">
+		<div class="col-lg-9 col-xl-8 text-center">
+			<a class="btn btn-primary px-4 mb-2" href="{{ "docs" | relURL }}" role="button">See the docs</a>
+		</div>
+	</div>
 </section>
 {{ end }}
 
 {{ define "sidebar-prefooter" }}
 <section class="section section-sm">
-  <div class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-5">
-        <h2 class="h4">Security aware</h2>
-        <p>Get A+ scores on <a href="https://observatory.mozilla.org/analyze/doks.netlify.app">Mozilla Observatory</a> out of the box. Easily change the default Security Headers to suit your needs.</p>
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">Fast by default ⚡️</h2>
-        <p>Get 100 scores on <a href="https://googlechrome.github.io/lighthouse/viewer/?gist=7731347bb8ce999eff7428a8e763b637">Google Lighthouse</a> by default. Doks removes unused css, prefetches links, and lazy loads images.</p>
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">SEO-ready</h2>
-        <p>Use sensible defaults for structured data, open graph, and Twitter cards. Or easily change the SEO settings to your liking.</p>
-      </div>
-    </div>
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-5">
-        <h2 class="h4">Full text search</h2>
-        <p>Search your Doks site with FlexSearch. Easily customize index settings and search options to your liking.</p>
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">Page layouts</h2>
-        <p>Build pages with a landing page, blog, or documentation layout. Add custom sections and components to suit your needs.</p>
-      </div>
-      <div class="col-lg-5">
-        <h2 class="h4">Dark mode</h2>
-        <p>Switch to a low-light UI with the click of a button. Change colors with variables to match your branding.</p>
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
+	<div class="container">
+		<div class="row justify-content-center text-center">
+			<div class="col-lg-5 col-md-8 col-12">
+				<h2 class="h4">
+					Database First
+					<svg fill="currentColor" class="star inline-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"/></svg>
+				</h2>
 
-{{ define "sidebar-footer" }}
-<section class="section section-sm container-fluid">
-  <div class="row justify-content-center text-center">
-    <div class="col-lg-9">
-      {{- .Content -}}
-    </div>
-  </div>
+				<p>Generate code via database introspection for your
+				<strong>tables</strong>,
+				<strong>indexes</strong>,
+				<strong>foreign keys</strong>,
+				<strong>stored procedures</strong> and
+				<strong>views</strong>.</p>
+			</div>
+			<div class="col-lg-5 col-md-8 col-12">
+				<h2 class="h4">
+					Major DB Support
+					<svg fill="currentColor" class="text-blue-300 inline-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M448 73.143v45.714C448 159.143 347.667 192 224 192S0 159.143 0 118.857V73.143C0 32.857 100.333 0 224 0s224 32.857 224 73.143zM448 176v102.857C448 319.143 347.667 352 224 352S0 319.143 0 278.857V176c48.125 33.143 136.208 48.572 224 48.572S399.874 209.143 448 176zm0 160v102.857C448 479.143 347.667 512 224 512S0 479.143 0 438.857V336c48.125 33.143 136.208 48.572 224 48.572S399.874 369.143 448 336z"/></svg>
+				</h2>
+				<p>Most major relational databases are supported. XO supports PostgreSQL, MySQL, Oracle Database, SQL Server, and SQLite3.</p>
+			</div>
+			<div class="col-lg-5 col-md-8 col-12">
+				<h2 class="h4">
+					Idiomatic Code
+					<svg fill="currentColor" class="inline-svg text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.3 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 128h416c8.84 0 16-7.16 16-16V48c0-8.84-7.16-16-16-16H16C7.16 32 0 39.16 0 48v64c0 8.84 7.16 16 16 16zm480 80H80c-8.84 0-16 7.16-16 16v64c0 8.84 7.16 16 16 16h416c8.84 0 16-7.16 16-16v-64c0-8.84-7.16-16-16-16zm-64 176H16c-8.84 0-16 7.16-16 16v64c0 8.84 7.16 16 16 16h416c8.84 0 16-7.16 16-16v-64c0-8.84-7.16-16-16-16z"/></svg>
+				</h2>
+				<p>Xo automatically creates data structures, CRUD operations, and functions from your indexes and foreign keys that just make sense.</p>
+			</div>
+			<!-- </div> -->
+			<!-- <div class="row justify-content-center text-center"> -->
+			<div class="col-lg-5 col-md-8 col-12">
+				<h2 class="h4">Custom Templates</h2>
+				<p>Easily customise, configure, and tweak XO to your liking. If XO doesn't have a feature you need, easily create your own templates.</p>
+			</div>
+			<div class="col-lg-5 col-md-8 col-12">
+				<h2 class="h4">Easy to use</h2>
+				<p>To get started with XO, run<br>
+				<code>xo schema [db url]</code>.<br>
+				That's it! Your schema is used to<br>generate idiomatic code.
+				</p>
+			</div>
+			<div class="col-lg-5 col-md-8 col-12">
+				<h2 class="h4">Really Fast</h2>
+				<p>XO is fast. Both with generating your code, and during runtime. Simple queries that do just what you need make sure things run smoothly.</p>
+			</div>
+			</div>
+	</div>
+</section>
+
+<section class="section section-sm mt-5 next">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-xl-4 col-lg-5 col-9">
+				<h4>Contribute to XO</h4>
+				<ul>
+					<li><a href="https://discord.gg/RCkTT3P9cF">Join the Discord Community</a></li>
+					<li><a href="https://github.com/xo/xo/issues/new">Suggest a feature</a></li>
+					<li><a href="https://github.com/xo/xo/issues">Work on an issue</a></li>
+				</ul>
+			</div>
+			<div class="col-xl-4 col-lg-5 col-9">
+				<h4>Supported Languages</h4>
+				<ul>
+					<li>Go</li>
+					<li>GraphViz (Dot)</li>
+					<li>JSON</li>
+					<li class="text-muted"><del>Java</del> (Coming soon)</li>
+				</ul>
+			</div>
+			<div class="col-xl-4 col-lg-5 col-9">
+				<h4>Other Projects</h4>
+				<ul>
+					<li><a href="https://github.com/xo/dburl">dburl: Standardised URL style mechanism for SQL connection strings</a></li>
+					<li><a href="https://github.com/xo/usql">USQL: Universal CLI for SQL Databases</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </section>
 {{ end }}

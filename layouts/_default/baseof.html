@@ -12,8 +12,9 @@
     {{ .Scratch.Set "class" .Type -}}
     {{ .Scratch.Add "class" " list" -}}
   {{ end -}}
-  <body class="{{ .Scratch.Get "class" }}">
+  <body class="{{ .Scratch.Get "class" }} default dark">
     {{ partial "header/header.html" . }}
+	{{ block "head/script-header" . }}{{ partial "head/script-header.html" . }}{{ end }}
     <div class="wrap container" role="document">
       <div class="content">
         {{ block "main" . }}{{ end }}

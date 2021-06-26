@@ -45,7 +45,7 @@ $enable-rfs:                  true;
 $enable-validation-icons:     true;
 $enable-negative-margins:     true;
 $enable-deprecation-messages: true;
-$enable-important-utilities:  true;
+$enable-important-utilities:  false;
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;

@@ -111,6 +111,10 @@ body.dark .showcase-meta a:focus {
   color: $link-color-dark;
 }
 
+body.dark a.docs-link {
+  border-left: 0.125rem solid $body-color-dark;
+}
+
 body.dark .docs-link:hover,
 body.dark .docs-link.active,
 body.dark .page-links a:hover {
@@ -233,7 +237,7 @@ body.dark pre code::-webkit-scrollbar-thumb {
 }
 
 body.dark code:not(.hljs) {
-  background: $gray-800;
+  background: $body-overlay-dark;
   color: $body-color-dark;
 }
 

@@ -58,9 +58,12 @@
 a.docs-link {
   color: $body-color;
   display: block;
-  padding: 0.125rem 0;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0 0.25rem 0.5rem;
+  border-left: 0.2rem solid $body-color;
   font-size: $font-size-base;
   font-weight: 500;
+  line-height: 110%;
 }
 
 .page-links li {

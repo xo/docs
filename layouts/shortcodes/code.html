@@ -1,7 +1,11 @@
-{{ $default := "-- Not available" }}
-{{ if (.Get "default") }}
-{{ $default = (.Get "default") }}
-{{ end -}}
+{{- $default := "-- Not available" -}}
+{{- if (.Get "default") -}}
+{{- $default = (.Get "default") -}}
+{{- end -}}
+{{- $lang := "sql" -}}
+{{- if (.Get "lang") -}}
+{{- $lang = (.Get "lang") -}}
+{{- end -}}
 
 <div class="code-selector">
   <p class="filename text-muted">{{ .Get "name" }}</p>
@@ -11,18 +15,18 @@
   <button class="code-select sqlite">sqlite</button>
   <button class="code-select oracle">oracle</button>
 </div>
-<pre class="code-toggle postgres"><code class="language-sql">
+<pre class="code-toggle postgres"><code class="language-{{ $lang }}">
 {{- if (.Get "postgres") }}{{ .Get "postgres" }}{{else}}{{ $default }}{{end}}
 </code></pre>
-<pre class="code-toggle mysql"><code class="language-sql">
+<pre class="code-toggle mysql"><code class="language-{{ $lang }}">
 {{- if (.Get "mysql") }}{{ .Get "mysql" }}{{else}}{{ $default }}{{end}}
 </code></pre>
-<pre class="code-toggle sqlite"><code class="language-sql">
+<pre class="code-toggle sqlite"><code class="language-{{ $lang }}">
 {{- if (.Get "sqlite") }}{{ .Get "sqlite" }}{{else}}{{ $default }}{{end}}
 </code></pre>
-<pre class="code-toggle sqlserver"><code class="language-sql">
+<pre class="code-toggle sqlserver"><code class="language-{{ $lang }}">
 {{- if (.Get "sqlserver") }}{{ .Get "sqlserver" }}{{else}}{{ $default }}{{end}}
 </code></pre>
-<pre class="code-toggle oracle"><code class="language-sql">
+<pre class="code-toggle oracle"><code class="language-{{ $lang }}">
 {{- if (.Get "oracle") }}{{ .Get "oracle" }}{{else}}{{ $default }}{{end}}
 </code></pre>

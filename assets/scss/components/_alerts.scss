@@ -1,6 +1,7 @@
 .alert {
   font-family: $font-family-monospace;
   font-size: $font-size-sm;
+  // line-height: 200%;
 }
 
 .alert-icon {
@@ -29,7 +30,7 @@
 }
 
 .alert-warning {
-  background: $beige;
+  background: $gray-200;
   color: $black;
 }
 
@@ -63,7 +64,11 @@
 }
 
 .alert code {
-  background: darken($beige, 5%);
+  background: darken($gray-200, 5%);
   color: $black;
-  padding: 0.25rem 0.5rem;
+  padding: 0.2rem 0.25rem;
+}
+
+body.dark .alert code {
+  background: $gray-700;
 }

@@ -8,7 +8,12 @@ Based on Ascetic by (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
   display: block;
   overflow-x: auto;
   padding: 1.25rem 1.5rem;
-  background: $gray-800;
+  background: $gray-200;
+  color: $black;
+}
+
+body.dark .hljs {
+  background: $body-overlay-dark;
   color: $body-color-dark;
 }
 

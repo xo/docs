@@ -1,2 +1,2 @@
-baseurl = "https://example.com/"
-canonifyURLs = true
+baseurl = "https://xo.usql.app/"
+canonifyURLs = false

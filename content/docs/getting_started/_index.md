@@ -1,6 +1,6 @@
 ---
 title : "Getting Started"
-description: "Getting Started with XO"
+description: "Getting Started with xo"
 lead: ""
 date: 2020-10-06T08:48:45+00:00
 lastmod: 2020-10-06T08:48:45+00:00

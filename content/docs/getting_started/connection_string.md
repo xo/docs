@@ -1,7 +1,7 @@
 ---
 title: "Connection Strings"
-description: "Connecting to your database with XO"
-lead: "Connecting to your database with XO"
+description: "Connecting to your database with xo"
+lead: "Connecting to your database with xo"
 date: 2021-06-25T11:23:25Z
 lastmod: 2021-06-25T11:23:25Z
 draft: false
@@ -17,14 +17,14 @@ toc: true
 
 Creating a connection string to your database can become confusing, especially
 with all of the different formats that databases use. To help reduce
-complexity, XO uses [dburl →](https://github.com/xo/dburl).
+complexity, `xo` uses [dburl →](https://github.com/xo/dburl).
 
 `dburl` provides a standard, URL style mechanism for parsing and opening SQL
 database connection strings.
 
 ### How it works
 
-Database connection URLs supported by XO are all in the same form:
+Database connection URLs supported by `xo` are all in the same form:
 
 ```url
 protocol+transport://user:pass@host/dbname?opt1=a&opt2=b
@@ -49,7 +49,7 @@ Where:
 is of the form <code>/service/dbname</code> where <code>/service</code> is the
 service name or SID, and <code>/dbname</code> is optional.` />}}
 
-To connect to your database with XO, here are the allowed protocols and driver
+To connect to your database with `xo`, here are the allowed protocols and driver
 names:
 
 | Database (scheme/driver)         | Protocol Aliases     |

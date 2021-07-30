@@ -1,6 +1,6 @@
 ---
 title: "Generating your first Schema"
-description: "Installing XO on your system"
+description: "Installing xo on your system"
 date: 2021-06-25T11:23:33Z
 lastmod: 2021-06-25T11:23:33Z
 draft: false

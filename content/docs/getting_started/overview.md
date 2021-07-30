@@ -1,6 +1,6 @@
 ---
 title: "Overview"
-description: "An overview of XO and its features"
+description: "An overview of xo and its features"
 date: 2020-10-06T08:48:57+00:00
 lastmod: 2020-10-06T08:48:57+00:00
 draft: false
@@ -14,13 +14,13 @@ toc: true
 
 ## Overview
 
-XO is a command-line tool to generate _idiomatic_ code for different languages
+`xo` is a command-line tool to generate _idiomatic_ code for different languages
 code based on a database schema or a custom query.
 
 ### Supported languages
 
-At the moment, XO supports generating code just for [Go](https://golang.org).
-XO can also generate a JSON Schema file from your DB, and
+At the moment, `xo` supports generating code just for [Go](https://golang.org).
+`xo` can also generate a JSON Schema file from your DB, and
 [GraphViz](http://graphviz.org/) diagrams.
 
 ### Features
@@ -43,7 +43,7 @@ XO can also generate a JSON Schema file from your DB, and
 
 ### Databases
 
-XO can generate types for tables, enums, stored procedures, and custom SQL
+`xo` can generate types for tables, enums, stored procedures, and custom SQL
 queries for the following languages:
 
 - [PostgreSQL →]({{< relref "databases#postgresql" >}})

@@ -1,7 +1,6 @@
 ---
 title: "Enums"
-description: ""
-lead: ""
+description: "Working with Enums in xo"
 date: 2021-06-26T09:05:17Z
 lastmod: 2021-06-26T09:05:17Z
 draft: false
@@ -9,14 +8,14 @@ images: []
 menu:
   docs:
     parent: "reference"
-weight: 40
+weight: 15
 toc: true
 ---
 
 ## Enums
 
-XO has full support for Enum types in PostgreSQL and MySQL. This page will
-cover in detail how to create your own enum types and using them with XO.
+`xo` has full support for Enum types in PostgreSQL and MySQL. This page will
+cover in detail how to create your own enum types and using them with `xo`.
 
 ```sql
 CREATE TYPE book_type AS ENUM VALUES ('FICTION', 'NONFICTION')

@@ -1,9 +1,9 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "XO"
+title = "xo"
 titleSeparator = " | "
-titleAddition = "XO"
+titleAddition = "xo"
 description = "A tool to generate idiomatic code from your database schema and queries"
 
 ## Open Graph + Twitter Cards
@@ -33,9 +33,9 @@ lqipWidth = "20x"
 
 # Footer
 footer = """
-<div>
-© 2015 – ­2021 <strog> <a href="https://github.com/xo">XO Team</a></strong> | Powered by <a href="https://gohugo.io/">Hugo</a>.
-</div>
+<p>
+© 2015 - 2021 <a href="https://github.com/xo"> xo contributors</a> | Powered by <a href="https://gohugo.io/">Hugo</a>.
+</p>
 """
 
 # Edit Page
